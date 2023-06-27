@@ -15,8 +15,8 @@ import fildz_cyberos as cyberos
 
 
 class ButtonAPI:
-    def __init__(self, name):
-        self._name = name
+    def __init__(self, cyberware):
+        self._cyberware = cyberware
         self._on_down = Event()
         self._on_hold = Event()
         self._on_up = Event()
@@ -33,7 +33,7 @@ class ButtonAPI:
 
     @on_down.setter
     def on_down(self, value):
-        asyncio.create_task(cyberos.event.push(self._name, 'on_down', value))
+        asyncio.create_task(cyberos.event.push(self._cyberware, 'on_down', value))
 
     @property
     def on_hold(self):
@@ -41,7 +41,7 @@ class ButtonAPI:
 
     @on_hold.setter
     def on_hold(self, value):
-        asyncio.create_task(cyberos.event.push(self._name, 'on_hold', value))
+        asyncio.create_task(cyberos.event.push(self._cyberware, 'on_hold', value))
 
     @property
     def on_up(self):
@@ -49,7 +49,7 @@ class ButtonAPI:
 
     @on_up.setter
     def on_up(self, value):
-        asyncio.create_task(cyberos.event.push(self._name, 'on_up', value))
+        asyncio.create_task(cyberos.event.push(self._cyberware, 'on_up', value))
 
     @property
     def on_click(self):
@@ -57,7 +57,7 @@ class ButtonAPI:
 
     @on_click.setter
     def on_click(self, value):
-        asyncio.create_task(cyberos.event.push(self._name, 'on_click', value))
+        asyncio.create_task(cyberos.event.push(self._cyberware, 'on_click', value))
 
     @property
     def on_double_click(self):
@@ -65,17 +65,17 @@ class ButtonAPI:
 
     @on_double_click.setter
     def on_double_click(self, value):
-        asyncio.create_task(cyberos.event.push(self._name, 'on_double_click', value))
+        asyncio.create_task(cyberos.event.push(self._cyberware, 'on_double_click', value))
 
     ################################################################################
     # Tasks
     #
     async def push(self):
-        await cyberos.event.push(self._name, 'on_down', self._on_down)
-        await cyberos.event.push(self._name, 'on_hold', self._on_hold)
-        await cyberos.event.push(self._name, 'on_up', self._on_up)
-        await cyberos.event.push(self._name, 'on_click', self._on_click)
-        await cyberos.event.push(self._name, 'on_double_click', self._on_double_click)
+        await cyberos.event.push(self._cyberware, 'on_down', self._on_down)
+        await cyberos.event.push(self._cyberware, 'on_hold', self._on_hold)
+        await cyberos.event.push(self._cyberware, 'on_up', self._on_up)
+        await cyberos.event.push(self._cyberware, 'on_click', self._on_click)
+        await cyberos.event.push(self._cyberware, 'on_double_click', self._on_double_click)
 
     async def pull(self):
-        await cyberos.event.pull(self._name)
+        await cyberos.event.pull(self._cyberware)
