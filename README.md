@@ -33,16 +33,16 @@ asyncio.run(main())
 ### Coroutine + Task + Event:
 
 ```Python
-btn = ButtonAPI('BUTTON-0F889A-ABW')
-
-async def btn_clicked():
+async def btn_clicked(btn):
     while True:
         await btn.on_click.wait()
         print('Button clicked')
+        btn.on_click.clear()
 
 async def main():
     await cyberos.init()
-    asyncio.create_task(btn_clicked())
+    btn = ButtonAPI('BUTTON-0F889A-ABW')
+    asyncio.create_task(btn_clicked(btn))
     await cyberos.run_forever()
 
 asyncio.run(main())
