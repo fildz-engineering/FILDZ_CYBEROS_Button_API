@@ -1,11 +1,11 @@
 # FILDZ CYBEROS Button API
 
-Button API for ["FILDZ CYBEROS Button"](https://github.com/fildz-official/FILDZ_CYBEROS_Button) library.
+Button API for [FILDZ CYBEROS Button](https://github.com/fildz-official/FILDZ_CYBEROS_Button) library.
 
 ## Setup
 
-1. Download and extract .zip file contents to "fildz_button_api" folder.
-2. Upload "fildz_button_api" folder to your MicroPython powered device.
+1. Download and extract .zip file contents to fildz_button_api folder.
+2. Upload fildz_button_api folder to your MicroPython powered device.
 
 ## Usage
 
