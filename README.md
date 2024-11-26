@@ -1,6 +1,6 @@
 # FILDZ CYBEROS Button API
 
-Button API for [FILDZ CYBEROS Button](https://github.com/fildz-official/FILDZ_CYBEROS_Button) library.
+Button API for [FILDZ CYBEROS Button](https://github.com/fildz-engineering/FILDZ_CYBEROS_Button) library.
 
 ## Setup
 
